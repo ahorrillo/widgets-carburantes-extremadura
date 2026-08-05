@@ -1,7 +1,6 @@
 # Widgets Carburantes Extremadura
 
 [![GitHub tag](https://img.shields.io/github/v/tag/ahorrillo/widgets-carburantes-extremadura?style=for-the-badge&label=Tag&color=2b6cb0)](https://github.com/ahorrillo/widgets-carburantes-extremadura/tags)
-[![Versión](https://img.shields.io/badge/Versi%C3%B3n-v1.0.0-2b6cb0?style=for-the-badge)](#)
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](#)
 [![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](#)
 [![Chart.js](https://img.shields.io/badge/Chart.js-FF6384?style=for-the-badge&logo=chartdotjs&logoColor=white)](#)
@@ -73,26 +72,17 @@ Aloja los datos JSON y el script compilado `widget-carburantes.js` en tu servido
 
 ```html
 <!-- 1. Contenedor del Widget -->
-<div id="widget-carburantes-extremadura"
+<div id="grafico-extremadura"
      data-componente="grafico"
      data-region="extremadura"
-     data-data-url="https://cdn.jsdelivr.net/gh/ahorrillo/widgets-carburantes-extremadura@v1.0.0/public/datos/">
+     data-data-url="https://cdn.jsdelivr.net/gh/ahorrillo/widgets-carburantes-extremadura@v1.0.1/public/datos/">
 </div>
 
 <!-- 2. Script del Widget -->
-<script src="https://cdn.jsdelivr.net/gh/ahorrillo/widgets-carburantes-extremadura@v1.0.0/dist/widget-carburantes.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/ahorrillo/widgets-carburantes-extremadura@v1.0.1/dist/widget-carburantes.js"></script>
 ```
 
-> **Nota importante:** Se recomienda utilizar siempre un **Tag de Git** (ej: `@v1.0.7`) en las URLs de jsDelivr en lugar de `@main` para evitar retrasos en la actualización por caché de CDN.
-
-### 3. Múltiples componentes en una misma página
-
-```html
-<div id="grafico-region" data-componente="grafico" data-region="extremadura"></div>
-<div id="tabla-region" data-componente="tabla" data-region="extremadura" style="margin-top: 20px;"></div>
-
-<script src="https://tu-dominio.com/js/widget-carburantes.js"></script>
-```
+> **Nota importante:** Se recomienda utilizar siempre un **Tag de Git** (ej: `@v1.0.1`) en las URLs de jsDelivr en lugar de `@main` para evitar retrasos en la actualización por caché de CDN.
 
 ---
 
