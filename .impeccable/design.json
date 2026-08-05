@@ -1,0 +1,263 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-05T22:15:00Z",
+  "title": "Design System: Widgets Carburantes Extremadura",
+  "extensions": {
+    "colorMeta": {
+      "gas-ink": {
+        "role": "primary",
+        "displayName": "Gasoline Ink",
+        "canonical": "oklch(44% 0.189 265)",
+        "tonalRamp": [
+          "oklch(18% 0.189 265)",
+          "oklch(25% 0.189 265)",
+          "oklch(33% 0.189 265)",
+          "oklch(42% 0.189 265)",
+          "oklch(52% 0.189 265)",
+          "oklch(64% 0.189 265)",
+          "oklch(78% 0.189 265)",
+          "oklch(93% 0.189 265)"
+        ]
+      },
+      "gas-wash": {
+        "role": "primary",
+        "displayName": "Gasoline Wash",
+        "canonical": "rgba(30, 64, 175, 0.1)",
+        "tonalRamp": [
+          "rgba(30, 64, 175, 0.02)",
+          "rgba(30, 64, 175, 0.05)",
+          "rgba(30, 64, 175, 0.08)",
+          "rgba(30, 64, 175, 0.1)",
+          "rgba(30, 64, 175, 0.14)",
+          "rgba(30, 64, 175, 0.18)",
+          "rgba(30, 64, 175, 0.25)",
+          "rgba(30, 64, 175, 0.35)"
+        ]
+      },
+      "diesel-ink": {
+        "role": "secondary",
+        "displayName": "Diesel Ink",
+        "canonical": "oklch(45% 0.109 151)",
+        "tonalRamp": [
+          "oklch(18% 0.109 151)",
+          "oklch(26% 0.109 151)",
+          "oklch(34% 0.109 151)",
+          "oklch(43% 0.109 151)",
+          "oklch(53% 0.109 151)",
+          "oklch(65% 0.109 151)",
+          "oklch(79% 0.109 151)",
+          "oklch(93% 0.109 151)"
+        ]
+      },
+      "diesel-wash": {
+        "role": "secondary",
+        "displayName": "Diesel Wash",
+        "canonical": "rgba(22, 101, 52, 0.1)",
+        "tonalRamp": [
+          "rgba(22, 101, 52, 0.02)",
+          "rgba(22, 101, 52, 0.05)",
+          "rgba(22, 101, 52, 0.08)",
+          "rgba(22, 101, 52, 0.1)",
+          "rgba(22, 101, 52, 0.14)",
+          "rgba(22, 101, 52, 0.18)",
+          "rgba(22, 101, 52, 0.25)",
+          "rgba(22, 101, 52, 0.35)"
+        ]
+      },
+      "card-surface": {
+        "role": "neutral",
+        "displayName": "Card Surface",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#ffffff",
+          "#ffffff",
+          "#ffffff",
+          "#ffffff",
+          "#ffffff",
+          "#ffffff",
+          "#ffffff",
+          "#ffffff"
+        ]
+      },
+      "headline-ink": {
+        "role": "neutral",
+        "displayName": "Headline Ink",
+        "canonical": "#0f172a",
+        "tonalRamp": [
+          "#020617",
+          "#0f172a",
+          "#1e293b",
+          "#334155",
+          "#475569",
+          "#64748b",
+          "#94a3b8",
+          "#cbd5e1"
+        ]
+      },
+      "body-ink": {
+        "role": "neutral",
+        "displayName": "Body Ink",
+        "canonical": "#475569",
+        "tonalRamp": [
+          "#0f172a",
+          "#1e293b",
+          "#334155",
+          "#475569",
+          "#64748b",
+          "#94a3b8",
+          "#cbd5e1",
+          "#e2e8f0"
+        ]
+      },
+      "muted-ink": {
+        "role": "neutral",
+        "displayName": "Muted Ink",
+        "canonical": "#64748b",
+        "tonalRamp": [
+          "#1e293b",
+          "#334155",
+          "#475569",
+          "#64748b",
+          "#94a3b8",
+          "#cbd5e1",
+          "#e2e8f0",
+          "#f1f5f9"
+        ]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#e2e8f0",
+        "tonalRamp": [
+          "#c2ccdc",
+          "#cdd6e4",
+          "#d8dfea",
+          "#e2e8f0",
+          "#e9edf4",
+          "#f0f3f8",
+          "#f7f9fb",
+          "#ffffff"
+        ]
+      },
+      "row-hairline": {
+        "role": "neutral",
+        "displayName": "Row Hairline",
+        "canonical": "#f1f5f9",
+        "tonalRamp": [
+          "#dde4ee",
+          "#e5eaf2",
+          "#edf1f6",
+          "#f1f5f9",
+          "#f4f7fb",
+          "#f8fafc",
+          "#fbfcfe",
+          "#ffffff"
+        ]
+      },
+      "header-tint": {
+        "role": "neutral",
+        "displayName": "Header Tint",
+        "canonical": "#f8fafc",
+        "tonalRamp": [
+          "#e2e8f0",
+          "#edf1f7",
+          "#f1f5f9",
+          "#f4f7fa",
+          "#f8fafc",
+          "#fafbfd",
+          "#fdfdfe",
+          "#ffffff"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Card Title",
+        "purpose": "The single h4 heading at the top of every widget card. Bold, 1rem, headline ink."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Table cell text — month labels and price values. 0.9rem."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Table column headers in muted ink. 0.75rem, weight 500."
+      }
+    },
+    "shadows": [],
+    "motion": [],
+    "breakpoints": []
+  },
+  "components": [
+    {
+      "name": "Data Card",
+      "kind": "card",
+      "refersTo": "data-card",
+      "description": "The flat white shell every widget renders inside — 8px radius, 1px hairline, 16px inset, system-ui.",
+      "html": "<div class=\"ds-card\">\n  <h4 class=\"ds-card-title\">Evolución de carburantes en Extremadura</h4>\n  <p class=\"ds-card-body\">Los precios de referencia diarios, listos para publicar.</p>\n</div>",
+      "css": ".ds-card { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; max-width: 600px; }\n.ds-card-title { margin: 0 0 12px 0; color: #0f172a; font-size: 1rem; font-weight: 700; line-height: 1.3; }\n.ds-card-body { margin: 0; color: #475569; font-size: 0.9rem; }"
+    },
+    {
+      "name": "Chart Card",
+      "kind": "custom",
+      "refersTo": "data-card",
+      "description": "Line chart card: two data series — Gasoline Ink and Diesel Ink, each with a 10% area wash and a legend at top.",
+      "html": "<div class=\"ds-card ds-chart-card\">\n  <h4 class=\"ds-card-title\">Evolución de carburantes en Badajoz</h4>\n  <svg class=\"ds-chart\" viewBox=\"0 0 480 220\" role=\"img\" aria-label=\"Evolución de precios de carburantes\">\n    <defs>\n      <linearGradient id=\"ds-g-gas\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n        <stop offset=\"0\" stop-color=\"#1e40af\" stop-opacity=\"0.1\"/>\n        <stop offset=\"1\" stop-color=\"#1e40af\" stop-opacity=\"0\"/>\n      </linearGradient>\n      <linearGradient id=\"ds-g-diesel\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n        <stop offset=\"0\" stop-color=\"#166534\" stop-opacity=\"0.1\"/>\n        <stop offset=\"1\" stop-color=\"#166534\" stop-opacity=\"0\"/>\n      </linearGradient>\n    </defs>\n    <path d=\"M10 96 L90 88 L170 80 L250 72 L330 66 L410 60 L470 54 L470 220 L10 220 Z\" fill=\"url(#ds-g-gas)\"/>\n    <path d=\"M10 96 L90 88 L170 80 L250 72 L330 66 L410 60 L470 54\" fill=\"none\" stroke=\"#1e40af\" stroke-width=\"2.5\"/>\n    <path d=\"M10 158 L90 150 L170 138 L250 128 L330 122 L410 114 L470 104 L470 220 L10 220 Z\" fill=\"url(#ds-g-diesel)\"/>\n    <path d=\"M10 158 L90 150 L170 138 L250 128 L330 122 L410 114 L470 104\" fill=\"none\" stroke=\"#166534\" stroke-width=\"2.5\"/>\n  </svg>\n  <div class=\"ds-legend\">\n    <span class=\"ds-legend-item\"><span class=\"ds-legend-dot ds-legend-dot-gas\"></span>Gasolina 95 E5</span>\n    <span class=\"ds-legend-item\"><span class=\"ds-legend-dot ds-legend-dot-diesel\"></span>Gasóleo A</span>\n  </div>\n</div>",
+      "css": ".ds-chart-card { max-width: 100%; }\n.ds-chart { display: block; width: 100%; height: auto; }\n.ds-legend { display: flex; gap: 16px; margin-top: 12px; font-family: system-ui, sans-serif; font-size: 0.75rem; font-weight: 500; color: #64748b; }\n.ds-legend-item { display: inline-flex; align-items: center; gap: 6px; }\n.ds-legend-dot { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }\n.ds-legend-dot-gas { background: #1e40af; }\n.ds-legend-dot-diesel { background: #166534; }"
+    },
+    {
+      "name": "Monthly Table",
+      "kind": "custom",
+      "refersTo": "data-card",
+      "description": "Monthly averages table: tinted header, hairline row separators, bold fuel-colored values, 3-decimal precision.",
+      "html": "<div class=\"ds-card\">\n  <h4 class=\"ds-card-title\">Promedio mensual de carburantes (Extremadura)</h4>\n  <table class=\"ds-table\">\n    <thead>\n      <tr class=\"ds-tr\">\n        <th class=\"ds-th\">Mes</th>\n        <th class=\"ds-th\">Media Gasolina 95</th>\n        <th class=\"ds-th\">Media Gasóleo A</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr class=\"ds-tr\"><td class=\"ds-td\">Enero 2026</td><td class=\"ds-td ds-td-value ds-td-gas\">1.460 €/l</td><td class=\"ds-td ds-td-value ds-td-diesel\">1.644 €/l</td></tr>\n      <tr class=\"ds-tr\"><td class=\"ds-td\">Febrero 2026</td><td class=\"ds-td ds-td-value ds-td-gas\">1.482 €/l</td><td class=\"ds-td ds-td-value ds-td-diesel\">1.669 €/l</td></tr>\n      <tr class=\"ds-tr\"><td class=\"ds-td\">Marzo 2026</td><td class=\"ds-td ds-td-value ds-td-gas\">1.644 €/l</td><td class=\"ds-td ds-td-value ds-td-diesel\">1.796 €/l</td></tr>\n    </tbody>\n  </table>\n</div>",
+      "css": ".ds-table { width: 100%; border-collapse: collapse; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; font-size: 0.9rem; text-align: left; }\n.ds-tr { border-bottom: 1px solid #f1f5f9; }\n.ds-th { padding: 8px 10px; background: #f8fafc; color: #64748b; font-size: 0.75rem; font-weight: 500; border-bottom: 2px solid #e2e8f0; }\n.ds-td { padding: 10px; color: #475569; font-weight: 500; }\n.ds-td-value { font-weight: 700; }\n.ds-td-gas { color: #1e40af; }\n.ds-td-diesel { color: #166534; }"
+    },
+    {
+      "name": "Table Value Cell — Gasoline",
+      "kind": "custom",
+      "refersTo": "table-value-gas",
+      "description": "A bold Gasolina 95 average value in Gasoline Ink.",
+      "html": "<td class=\"ds-td ds-td-value ds-td-gas\">1.460 €/l</td>",
+      "css": ".ds-td { padding: 10px; font-family: system-ui, sans-serif; font-size: 0.9rem; }\n.ds-td-value { font-weight: 700; }\n.ds-td-gas { color: #1e40af; }"
+    },
+    {
+      "name": "Table Value Cell — Diesel",
+      "kind": "custom",
+      "refersTo": "table-value-diesel",
+      "description": "A bold Gasóleo A average value in Diesel Ink.",
+      "html": "<td class=\"ds-td ds-td-value ds-td-diesel\">1.644 €/l</td>",
+      "css": ".ds-td { padding: 10px; font-family: system-ui, sans-serif; font-size: 0.9rem; }\n.ds-td-value { font-weight: 700; }\n.ds-td-diesel { color: #166534; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Editorial Data Card",
+    "overview": "The widget system behaves like a well-set data card in a regional newspaper: flat white surfaces, hairline rules, and two dark, print-like inks carrying the fuel series. It never reaches for dashboard flair or decorative data-viz; it states numbers plainly, the way a chart desk would set them for a broadsheet page.\n\nThe personality is calm and editorial. Density is light — one card, one message, generous padding — so the widget holds its own inside a busy news article without shouting at the reader or fighting the surrounding typography. Everything is self-contained: inline styles only, system-ui type, zero dependence on the host page's CSS.",
+    "keyCharacteristics": [
+      "Flat, shadow-free white cards separated by 1px slate hairlines.",
+      "Exactly two chromatic inks: dark blue for Gasolina 95, dark green for Gasóleo A — both muted print inks, never neon.",
+      "system-ui type only; the widget never loads a font of its own.",
+      "Fully self-contained: inline styles, Chart.js bundled, no reliance on host CSS.",
+      "Restrained interaction: legend top, responsive canvas, no decorative motion."
+    ],
+    "rules": [
+      { "name": "The Two-Ink Rule", "body": "Blue means Gasolina 95; green means Gasóleo A. They are the only chromatic inks in the system — never introduce a third series color, chart accent, or status tint.", "section": "colors" },
+      { "name": "The Ink-Not-Neon Rule", "body": "Both fuel colors stay at dark, print-like tones. Never brighten them into saturated display hues or neon fills; the washes stay at 10% opacity.", "section": "colors" },
+      { "name": "The No-Imported-Type Rule", "body": "Only system-ui, ever. Loading a webfont inside the widget is prohibited — the host article's typography must win.", "section": "typography" },
+      { "name": "The Flat-By-Default Rule", "body": "Surfaces are flat at rest and remain flat on hover. If micro-lift is ever considered, it must be a border or background shift — never a shadow.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep every widget a flat white card: 8px radius, 1px #e2e8f0 hairline, 16px inset.",
+      "Do use Gasoline Ink (#1e40af) for Gasolina 95 data and Diesel Ink (#166534) for Gasóleo A data — everywhere, without exception.",
+      "Do render all text in system-ui and let the host page's type win.",
+      "Do use 3-decimal precision for monthly average prices."
+    ],
+    "donts": [
+      "Don't add shadows, gradients, or depth effects — the system is flat by design.",
+      "Don't introduce a third series color or chart accent; the Two-Ink Rule holds.",
+      "Don't load webfonts or external CSS inside the widget.",
+      "Don't add vertical table borders, zebra stripes, or cell outlines beyond the row hairlines.",
+      "Don't state a price the data does not support — all values come from the MITECO extraction."
+    ]
+  }
+}

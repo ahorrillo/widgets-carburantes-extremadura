@@ -2,44 +2,68 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Widgets Carburantes Extremadura</title>
+  <style>
+    body { padding: 24px; background: #f8fafc; font-family: system-ui, sans-serif; }
+    h2 { font-size: 1.05rem; color: #0f172a; margin: 32px 0 12px; }
+    .lote { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start; }
+    .lote > div { flex: 1 1 320px; max-width: 640px; }
+  </style>
 </head>
-<body style="padding: 20px; background: #f8fafc; display: flex; flex-direction: column; gap: 20px;">
+<body>
 
-  <div id="grafico-badajoz"
-      data-componente="grafico"
-      data-region="badajoz"
-      data-data-url="https://cdn.jsdelivr.net/gh/ahorrillo/widgets-carburantes-extremadura@v1.0.1/public/datos/">
+  <h2>A0 · Gráficos de evolución (diarios)</h2>
+  <div class="lote">
+    <div id="grafico-extremadura" data-componente="grafico" data-region="extremadura" data-data-url="/datos"></div>
+    <div id="grafico-badajoz" data-componente="grafico" data-region="badajoz" data-data-url="/datos"></div>
+    <div id="grafico-caceres" data-componente="grafico" data-region="caceres" data-data-url="/datos"></div>
   </div>
 
-    <div id="tabla-badajoz"
-      data-componente="tabla"
-      data-region="badajoz"
-      data-data-url="https://cdn.jsdelivr.net/gh/ahorrillo/widgets-carburantes-extremadura@v1.0.1/public/datos/">
+  <h2>A1 · Situación ("el precio hoy")</h2>
+  <div class="lote">
+    <div id="situacion-extremadura" data-componente="situacion" data-region="extremadura" data-data-url="/datos"></div>
+    <div id="situacion-badajoz" data-componente="situacion" data-region="badajoz" data-data-url="/datos"></div>
+    <div id="situacion-caceres" data-componente="situacion" data-region="caceres" data-data-url="/datos"></div>
   </div>
 
-  <div id="grafico-caceres"
-      data-componente="grafico"
-      data-region="caceres"
-      data-data-url="https://cdn.jsdelivr.net/gh/ahorrillo/widgets-carburantes-extremadura@v1.0.1/public/datos/">
+  <h2>A2 · Comparativa Badajoz vs. Cáceres</h2>
+  <div class="lote">
+    <div id="comparativa-gasolina" data-componente="comparativa" data-producto="gasolina" data-data-url="/datos"></div>
+    <div id="comparativa-gasoleo" data-componente="comparativa" data-producto="gasoleo" data-data-url="/datos"></div>
   </div>
 
-    <div id="tabla-caceres"
-      data-componente="tabla"
-      data-region="caceres"
-      data-data-url="https://cdn.jsdelivr.net/gh/ahorrillo/widgets-carburantes-extremadura@v1.0.1/public/datos/">
+  <h2>A3 · Medias mensuales (barras)</h2>
+  <div class="lote">
+    <div id="barras-extremadura" data-componente="barras" data-region="extremadura" data-data-url="/datos"></div>
+    <div id="barras-badajoz" data-componente="barras" data-region="badajoz" data-data-url="/datos"></div>
+    <div id="barras-caceres" data-componente="barras" data-region="caceres" data-data-url="/datos"></div>
   </div>
 
-  <div id="grafico-extremadura"
-      data-componente="grafico"
-      data-region="extremadura"
-      data-data-url="https://cdn.jsdelivr.net/gh/ahorrillo/widgets-carburantes-extremadura@v1.0.1/public/datos/">
+  <h2>A4 · Récords del año</h2>
+  <div class="lote">
+    <div id="records-extremadura" data-componente="records" data-region="extremadura" data-producto="gasolina" data-data-url="/datos"></div>
+    <div id="records-badajoz" data-componente="records" data-region="badajoz" data-producto="gasolina" data-data-url="/datos"></div>
+    <div id="records-caceres" data-componente="records" data-region="caceres" data-producto="gasolina" data-data-url="/datos"></div>
+  </div>
+  <div class="lote">
+    <div id="records-extremadura-gasoleo" data-componente="records" data-region="extremadura" data-producto="gasoleo" data-data-url="/datos"></div>
+    <div id="records-badajoz-gasoleo" data-componente="records" data-region="badajoz" data-producto="gasoleo" data-data-url="/datos"></div>
+    <div id="records-caceres-gasoleo" data-componente="records" data-region="caceres" data-producto="gasoleo" data-data-url="/datos"></div>
   </div>
 
-    <div id="tabla-extremadura"
-      data-componente="tabla"
-      data-region="extremadura"
-      data-data-url="https://cdn.jsdelivr.net/gh/ahorrillo/widgets-carburantes-extremadura@v1.0.1/public/datos/">
+  <h2>A5 · Diferencial gasóleo − gasolina</h2>
+  <div class="lote">
+    <div id="diferencial-extremadura" data-componente="diferencial" data-region="extremadura" data-data-url="/datos"></div>
+    <div id="diferencial-badajoz" data-componente="diferencial" data-region="badajoz" data-data-url="/datos"></div>
+    <div id="diferencial-caceres" data-componente="diferencial" data-region="caceres" data-data-url="/datos"></div>
+  </div>
+
+  <h2>A6 · Tablas (medias mensuales)</h2>
+  <div class="lote">
+    <div id="tabla-extremadura" data-componente="tabla" data-region="extremadura" data-data-url="/datos"></div>
+    <div id="tabla-badajoz" data-componente="tabla" data-region="badajoz" data-data-url="/datos"></div>
+    <div id="tabla-caceres" data-componente="tabla" data-region="caceres" data-data-url="/datos"></div>
   </div>
 
   <script type="module" src="/src/main.js"></script>

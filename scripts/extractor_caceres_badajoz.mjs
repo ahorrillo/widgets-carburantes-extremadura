@@ -97,9 +97,9 @@ async function procesarDiaProvincial(fecha) {
 }
 
 async function main() {
-  console.log("=== Extrayendo datos diarios de Badajoz y Cáceres (Ene - Jul 2026) ===");
+  console.log("=== Extrayendo datos diarios de Badajoz y Cáceres (Ene - Ago 2026) ===");
 
-  const fechas = generarRangoFechas("2026-01-01", "2026-07-31");
+  const fechas = generarRangoFechas("2026-01-01", "2026-08-04");
   const resultados = [];
   const CONCURRENCIA = 2; // 2 días en paralelo (8 llamadas HTTP a la vez)
 

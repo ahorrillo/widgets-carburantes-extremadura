@@ -16,8 +16,8 @@ Diseñado para generar un único archivo JavaScript embebible de fácil integrac
 
 * **Extracción automatizada:** Scripts en Node.js para consultar la API REST oficial del MITECO (Ministerio para la Transición Ecológica).
 * **Visualización ligera:** Desarrollado con Vanilla JS, Vite y Chart.js sin dependencias pesadas.
-* **Integración sin código extra:** Autodetección e inicialización mediante atributos HTML `data-componente` y `data-region`.
-* **Múltiples componentes:** Soporte para gráficos de líneas interactivos y tablas dinámicas con los últimos registros.
+* **Integración sin código extra:** Autodetección e inicialización mediante atributos HTML `data-componente`, `data-region` y `data-producto`.
+* **Múltiples componentes:** Gráficos de líneas interactivos, tablas de medias mensuales, situación ("el precio hoy"), comparativa provincial, medias mensuales en barras, récords del año y diferencial gasóleo − gasolina.
 
 ---
 
@@ -29,13 +29,24 @@ widgets-carburantes-extremadura/
 │   └── datos/
 │       ├── historico_extremadura_2026.json
 │       └── historico_provincias_extremadura_2026.json
+├── scripts/
+│   ├── extractor_extremadura.mjs
+│   └── extractor_caceres_badajoz.mjs
 ├── src/
+│   ├── styles/
+│   │   └── widget.css
 │   ├── widgets/
+│   │   ├── grafico_editorial.js
 │   │   ├── widget_extremadura.js
 │   │   ├── widget_badajoz.js
 │   │   ├── widget_caceres.js
 │   │   ├── widget_provincial.js
-│   │   └── widget_tabla.js
+│   │   ├── widget_tabla.js
+│   │   ├── widget_situacion.js
+│   │   ├── widget_comparativa.js
+│   │   ├── widget_barras.js
+│   │   ├── widget_records.js
+│   │   └── widget_diferencial.js
 │   └── main.js
 ├── index.html
 ├── vite.config.js
@@ -68,21 +79,66 @@ widgets-carburantes-extremadura/
 
 ## 💻 Integración en un CMS
 
-Aloja los datos JSON y el script compilado `widget-carburantes.js` en tu servidor web o CDN. Luego inserta las etiquetas HTML dentro del cuerpo del artículo:
+Aloja los datos JSON y el script compilado `widget-carburantes.js` en tu servidor web o CDN. Luego inserta las etiquetas HTML dentro del cuerpo del artículo. Solo se necesita el `<script>` una vez por página; cada widget es un contenedor `data-*`:
 
 ```html
-<!-- 1. Contenedor del Widget -->
+<!-- 1. Script del Widget (una sola vez por página) -->
+<script src="https://cdn.jsdelivr.net/gh/ahorrillo/widgets-carburantes-extremadura@v1.0.2/dist/widget-carburantes.js"></script>
+
+<!-- 2. Contenedores de widgets (donde quieras cada gráfico) -->
+
+<!-- A0 · Gráfico de evolución diaria -->
 <div id="grafico-extremadura"
      data-componente="grafico"
      data-region="extremadura"
-     data-data-url="https://cdn.jsdelivr.net/gh/ahorrillo/widgets-carburantes-extremadura@v1.0.1/public/datos/">
+     data-data-url="https://cdn.jsdelivr.net/gh/ahorrillo/widgets-carburantes-extremadura@v1.0.2/public/datos/">
 </div>
 
-<!-- 2. Script del Widget -->
-<script src="https://cdn.jsdelivr.net/gh/ahorrillo/widgets-carburantes-extremadura@v1.0.1/dist/widget-carburantes.js"></script>
+<!-- A1 · Situación ("el precio hoy") -->
+<div id="situacion-caceres"
+     data-componente="situacion"
+     data-region="caceres"
+     data-data-url="https://cdn.jsdelivr.net/gh/ahorrillo/widgets-carburantes-extremadura@v1.0.2/public/datos/">
+</div>
+
+<!-- A2 · Comparativa Badajoz vs. Cáceres (gasolina o gasoleo) -->
+<div id="comparativa-gasoleo"
+     data-componente="comparativa"
+     data-producto="gasoleo"
+     data-data-url="https://cdn.jsdelivr.net/gh/ahorrillo/widgets-carburantes-extremadura@v1.0.2/public/datos/">
+</div>
+
+<!-- A3 · Medias mensuales en barras -->
+<div id="barras-extremadura"
+     data-componente="barras"
+     data-region="extremadura"
+     data-data-url="https://cdn.jsdelivr.net/gh/ahorrillo/widgets-carburantes-extremadura@v1.0.2/public/datos/">
+</div>
+
+<!-- A4 · Récords del año (gasolina o gasoleo) -->
+<div id="records-extremadura"
+     data-componente="records"
+     data-region="extremadura"
+     data-producto="gasolina"
+     data-data-url="https://cdn.jsdelivr.net/gh/ahorrillo/widgets-carburantes-extremadura@v1.0.2/public/datos/">
+</div>
+
+<!-- A5 · Diferencial gasóleo − gasolina -->
+<div id="diferencial-extremadura"
+     data-componente="diferencial"
+     data-region="extremadura"
+     data-data-url="https://cdn.jsdelivr.net/gh/ahorrillo/widgets-carburantes-extremadura@v1.0.2/public/datos/">
+</div>
+
+<!-- A6 · Tabla de medias mensuales -->
+<div id="tabla-extremadura"
+     data-componente="tabla"
+     data-region="extremadura"
+     data-data-url="https://cdn.jsdelivr.net/gh/ahorrillo/widgets-carburantes-extremadura@v1.0.2/public/datos/">
+</div>
 ```
 
-> **Nota importante:** Se recomienda utilizar siempre un **Tag de Git** (ej: `@v1.0.1`) en las URLs de jsDelivr en lugar de `@main` para evitar retrasos en la actualización por caché de CDN.
+> **Nota importante:** Se recomienda utilizar siempre un **Tag de Git** (ej: `@v1.0.2`) en las URLs de jsDelivr en lugar de `@main` para evitar retrasos en la actualización por caché de CDN. El `<script>` debe cargarse con `defer` o al final del artículo para no bloquear el renderizado.
 
 ---
 
@@ -90,8 +146,10 @@ Aloja los datos JSON y el script compilado `widget-carburantes.js` en tu servido
 
 | Atributo | Valores permitidos | Descripción |
 | :--- | :--- | :--- |
-| `data-componente` | `grafico` (por defecto), `tabla` | Especifica el tipo de visualización a renderizar. |
+| `data-componente` | `grafico` (por defecto), `tabla`, `situacion`, `comparativa`, `barras`, `records`, `diferencial` | Tipo de visualización a renderizar. |
 | `data-region` | `extremadura` (por defecto), `badajoz`, `caceres` | Ámbito geográfico del que se consultarán los datos. |
+| `data-producto` | `gasolina` (por defecto), `gasoleo` | Combustible; solo lo usan `comparativa` y `records`. |
+| `data-data-url` | URL | Base desde la que se cargan los JSON (CDN por defecto: `https://cdn.jsdelivr.net/gh/ahorrillo/widgets-carburantes-extremadura@v1.0.2/public/datos/`). Se elimina la barra final. |
 
 ---
 

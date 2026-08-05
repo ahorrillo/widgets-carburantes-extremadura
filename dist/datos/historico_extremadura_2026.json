@@ -1482,5 +1482,33 @@
     "gasoleoA": 1.878,
     "estacionesG95": 389,
     "estacionesGasA": 112
+  },
+  {
+    "fecha": "01-08-2026",
+    "gasolina95_E5": 1.715,
+    "gasoleoA": 1.917,
+    "estacionesG95": 389,
+    "estacionesGasA": 112
+  },
+  {
+    "fecha": "02-08-2026",
+    "gasolina95_E5": 1.717,
+    "gasoleoA": 1.92,
+    "estacionesG95": 389,
+    "estacionesGasA": 112
+  },
+  {
+    "fecha": "03-08-2026",
+    "gasolina95_E5": 1.724,
+    "gasoleoA": 1.926,
+    "estacionesG95": 389,
+    "estacionesGasA": 112
+  },
+  {
+    "fecha": "04-08-2026",
+    "gasolina95_E5": 1.727,
+    "gasoleoA": 1.925,
+    "estacionesG95": 388,
+    "estacionesGasA": 112
   }
 ]

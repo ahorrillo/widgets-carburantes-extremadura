@@ -2754,5 +2754,57 @@
       "gasoleoA": 1.897,
       "estaciones": 148
     }
+  },
+  {
+    "fecha": "01-08-2026",
+    "badajoz": {
+      "gasolina95_E5": 1.702,
+      "gasoleoA": 1.904,
+      "estaciones": 241
+    },
+    "caceres": {
+      "gasolina95_E5": 1.736,
+      "gasoleoA": 1.936,
+      "estaciones": 148
+    }
+  },
+  {
+    "fecha": "02-08-2026",
+    "badajoz": {
+      "gasolina95_E5": 1.704,
+      "gasoleoA": 1.906,
+      "estaciones": 241
+    },
+    "caceres": {
+      "gasolina95_E5": 1.737,
+      "gasoleoA": 1.941,
+      "estaciones": 148
+    }
+  },
+  {
+    "fecha": "03-08-2026",
+    "badajoz": {
+      "gasolina95_E5": 1.713,
+      "gasoleoA": 1.915,
+      "estaciones": 241
+    },
+    "caceres": {
+      "gasolina95_E5": 1.742,
+      "gasoleoA": 1.943,
+      "estaciones": 148
+    }
+  },
+  {
+    "fecha": "04-08-2026",
+    "badajoz": {
+      "gasolina95_E5": 1.716,
+      "gasoleoA": 1.914,
+      "estaciones": 241
+    },
+    "caceres": {
+      "gasolina95_E5": 1.744,
+      "gasoleoA": 1.94,
+      "estaciones": 147
+    }
   }
 ]

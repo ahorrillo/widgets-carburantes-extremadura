@@ -1,10 +1,11 @@
+import { NOMBRES_REGION } from './grafico_editorial.js';
+
 export async function renderWidgetTabla(containerId, region = 'extremadura', baseUrl = '') {
   const container = document.getElementById(containerId);
   if (!container) return;
 
   const esProvincial = region === 'badajoz' || region === 'caceres';
 
-  // Limpia la barra final si existe
   const cdnBase = baseUrl ? baseUrl.replace(/\/$/, '') : '/datos';
 
   const archivo = esProvincial
@@ -18,7 +19,7 @@ export async function renderWidgetTabla(containerId, region = 'extremadura', bas
     if (!res.ok) throw new Error(`HTTP ${res.status} al solicitar ${url}`);
 
     const data = await res.json();
-    const titulo = region.charAt(0).toUpperCase() + region.slice(1);
+    const titulo = NOMBRES_REGION[region] || region.charAt(0).toUpperCase() + region.slice(1);
 
     // 1. Agrupar registros por Mes y Año
     const agrupadoPorMes = {};
@@ -27,7 +28,7 @@ export async function renderWidgetTabla(containerId, region = 'extremadura', bas
       const item = esProvincial ? d[region] : d;
       if (!d.fecha || !item) return;
 
-      // Asume formato "YYYY-MM-DD" o "DD/MM/YYYY" -> extrae Mes y Año
+      // Asume formato "DD-MM-YYYY" o "YYYY-MM-DD" -> extrae Mes y Año
       const partes = d.fecha.split(/[-/]/);
       let claveMes = '';
 
@@ -65,42 +66,40 @@ export async function renderWidgetTabla(containerId, region = 'extremadura', bas
     // 2. Generar filas calculando la media
     const clavesOrdenadas = Object.keys(agrupadoPorMes).sort(); // Orden cronológico
 
+    const media = (sum, count) => count > 0 ? (sum / count).toFixed(3).replace('.', ',') : '-';
+
     const filasHtml = clavesOrdenadas.map(clave => {
       const [year, month] = clave.split('-');
       const nombreMes = nombresMeses[parseInt(month, 10) - 1] || clave;
       const stats = agrupadoPorMes[clave];
 
-      const mediaGasolina = stats.gasolinaCount > 0
-        ? (stats.gasolinaSum / stats.gasolinaCount).toFixed(3)
-        : '-';
-
-      const mediaGasoleo = stats.gasoleoCount > 0
-        ? (stats.gasoleoSum / stats.gasoleoCount).toFixed(3)
-        : '-';
+      const mediaGasolina = media(stats.gasolinaSum, stats.gasolinaCount);
+      const mediaGasoleo = media(stats.gasoleoSum, stats.gasoleoCount);
 
       return `
-        <tr style="border-bottom: 1px solid #f1f5f9;">
-          <td style="padding: 10px; color: #475569; font-weight: 500;">${nombreMes} ${year}</td>
-          <td style="padding: 10px; font-weight: bold; color: #1e40af;">${mediaGasolina} €/l</td>
-          <td style="padding: 10px; font-weight: bold; color: #166534;">${mediaGasoleo} €/l</td>
+        <tr class="wc-fila">
+          <td class="wc-td">${nombreMes} ${year}</td>
+          <td class="wc-td wc-derecha wc-valor wc-valor-gas">${mediaGasolina === '-' ? '-' : `${mediaGasolina} €/l`}</td>
+          <td class="wc-td wc-derecha wc-valor wc-valor-gasoleo">${mediaGasoleo === '-' ? '-' : `${mediaGasoleo} €/l`}</td>
         </tr>
       `;
     }).join('');
 
     // 3. Renderizar estructura HTML de la tabla
     container.innerHTML = `
-      <div style="font-family: system-ui, sans-serif; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; max-width: 600px; background: #fff;">
-        <h4 style="margin: 0 0 12px 0; color: #0f172a;">Promedio mensual de carburantes (${titulo})</h4>
-        <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem; text-align: left;">
+      <div class="wc-card">
+        <h4 class="wc-titulo">Promedio mensual de carburantes (${titulo})</h4>
+        <table class="wc-tabla">
           <thead>
-            <tr style="background: #f8fafc; color: #64748b; border-bottom: 2px solid #e2e8f0;">
-              <th style="padding: 8px 10px;">Mes</th>
-              <th style="padding: 8px 10px;">Media Gasolina 95</th>
-              <th style="padding: 8px 10px;">Media Gasóleo A</th>
+            <tr class="wc-fila-cabecera">
+              <th class="wc-th">Mes</th>
+              <th class="wc-th wc-derecha">Media Gasolina 95</th>
+              <th class="wc-th wc-derecha">Media Gasóleo A</th>
             </tr>
           </thead>
           <tbody>${filasHtml}</tbody>
         </table>
+        <p class="wc-fuente">Fuente: MITECO · Medias mensuales de precios diarios</p>
       </div>
     `;
   } catch (err) {
