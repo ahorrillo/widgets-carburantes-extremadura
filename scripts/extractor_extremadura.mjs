@@ -87,7 +87,7 @@ async function procesarDia(fecha) {
 async function main() {
   console.log("=== Extracción Diaria Extremadura (Ene - Ago 2026) ===");
 
-  const fechas = generarRangoFechas("2026-01-01", "2026-08-04");
+  const fechas = generarRangoFechas("2026-01-01", "2026-08-05");
   console.log(`Días totales a consultar: ${fechas.length}\n`);
 
   const resultados = [];

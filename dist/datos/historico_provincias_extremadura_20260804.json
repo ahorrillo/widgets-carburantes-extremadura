@@ -2806,18 +2806,5 @@
       "gasoleoA": 1.94,
       "estaciones": 147
     }
-  },
-  {
-    "fecha": "05-08-2026",
-    "badajoz": {
-      "gasolina95_E5": 1.715,
-      "gasoleoA": 1.908,
-      "estaciones": 241
-    },
-    "caceres": {
-      "gasolina95_E5": 1.735,
-      "gasoleoA": 1.927,
-      "estaciones": 147
-    }
   }
 ]
