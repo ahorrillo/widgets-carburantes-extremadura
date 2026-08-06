@@ -22,8 +22,8 @@ export async function renderWidgetExtremadura(containerId, baseUrl = '') {
     crearGraficoEditorial(ctx, {
       etiquetas: data.map(d => d.fecha),
       series: [
-        { label: 'Gasolina 95 E5 (€/l)', ink: 'gasolina', data: data.map(d => d.gasolina95_E5) },
-        { label: 'Gasóleo A (€/l)', ink: 'gasoleo', data: data.map(d => d.gasoleoA) }
+        { label: 'Gasolina 95', ink: 'gasolina', data: data.map(d => d.gasolina95_E5) },
+        { label: 'Gasóleo A', ink: 'gasoleo', data: data.map(d => d.gasoleoA) }
       ]
     });
   } catch (err) {

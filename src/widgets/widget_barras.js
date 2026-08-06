@@ -27,8 +27,8 @@ export async function renderWidgetBarras(containerId, region = 'extremadura', ba
     crearGraficoBarras(ctx, {
       etiquetas: meses.map(m => formatearMesCorto(m.clave)),
       series: [
-        { label: 'Gasolina 95 E5 (€/l)', ink: 'gasolina', data: meses.map(m => m.mediaGasolina) },
-        { label: 'Gasóleo A (€/l)', ink: 'gasoleo', data: meses.map(m => m.mediaGasoleo) }
+        { label: 'Gasolina 95', ink: 'gasolina', data: meses.map(m => m.mediaGasolina) },
+        { label: 'Gasóleo A', ink: 'gasoleo', data: meses.map(m => m.mediaGasoleo) }
       ]
     });
   } catch (err) {

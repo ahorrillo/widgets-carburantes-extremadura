@@ -93,8 +93,8 @@ export async function renderWidgetTabla(containerId, region = 'extremadura', bas
           <thead>
             <tr class="wc-fila-cabecera">
               <th class="wc-th">Mes</th>
-              <th class="wc-th wc-derecha">Media Gasolina 95</th>
-              <th class="wc-th wc-derecha">Media Gasóleo A</th>
+              <th class="wc-th wc-derecha">Gasolina 95</th>
+              <th class="wc-th wc-derecha">Gasóleo A</th>
             </tr>
           </thead>
           <tbody>${filasHtml}</tbody>

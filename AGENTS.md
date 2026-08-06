@@ -39,5 +39,5 @@ Library of embeddable fuel-price widgets (Vocento/HOY.es) for Extremadura, Badaj
 ## Dev / release gotchas
 
 - `index.html` (dev playground) points every widget at `data-data-url="/datos"`, so during `npm run dev` data comes from your local `public/datos/*.json`. For production embedding, the CMS must point `data-data-url` at the published jsDelivr CDN tag (see README).
-- Releases are **git tags** (`v1.0.0`, `v1.0.1`); README/CDN URLs reference `@v1.x.y`. `package.json` `version` stays `0.0.0` and is not kept in sync with tags — the tag is the source of truth for publishing.
+- Releases are **git tags** (`v1.0.0`, `v1.0.4`); README/CDN URLs reference `@v1.x.y`. `package.json` `version` stays `0.0.0` and is not kept in sync with tags — the tag is the source of truth for publishing.
 - Repo is Spanish-first (code, comments, UI copy); keep new UI copy in Spanish to match.

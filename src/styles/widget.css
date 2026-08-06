@@ -145,7 +145,21 @@
   font-size: 0.75rem;
 }
 
+.wc-grafico-contenedor {
+  position: relative;
+  width: 100%;
+  height: 260px;
+}
+
 @media (max-width: 480px) {
+  .wc-grafico-contenedor {
+    height: 200px;
+  }
+
+  .wc-th, .wc-td {
+    padding: 8px 6px;
+  }
+
   .wc-grid-2 {
     grid-template-columns: 1fr;
   }

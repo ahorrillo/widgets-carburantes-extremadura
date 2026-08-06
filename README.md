@@ -83,7 +83,7 @@ Aloja los datos JSON y el script compilado `widget-carburantes.js` en tu servido
 
 ```html
 <!-- 1. Script del Widget (una sola vez por página) -->
-<script src="https://cdn.jsdelivr.net/gh/ahorrillo/widgets-carburantes-extremadura@v1.0.2/dist/widget-carburantes.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/ahorrillo/widgets-carburantes-extremadura@v1.0.4/dist/widget-carburantes.js"></script>
 
 <!-- 2. Contenedores de widgets (donde quieras cada gráfico) -->
 
@@ -91,28 +91,28 @@ Aloja los datos JSON y el script compilado `widget-carburantes.js` en tu servido
 <div id="grafico-extremadura"
      data-componente="grafico"
      data-region="extremadura"
-     data-data-url="https://cdn.jsdelivr.net/gh/ahorrillo/widgets-carburantes-extremadura@v1.0.2/public/datos/">
+     data-data-url="https://cdn.jsdelivr.net/gh/ahorrillo/widgets-carburantes-extremadura@v1.0.4/public/datos/">
 </div>
 
 <!-- A1 · Situación ("el precio hoy") -->
 <div id="situacion-caceres"
      data-componente="situacion"
      data-region="caceres"
-     data-data-url="https://cdn.jsdelivr.net/gh/ahorrillo/widgets-carburantes-extremadura@v1.0.2/public/datos/">
+     data-data-url="https://cdn.jsdelivr.net/gh/ahorrillo/widgets-carburantes-extremadura@v1.0.4/public/datos/">
 </div>
 
 <!-- A2 · Comparativa Badajoz vs. Cáceres (gasolina o gasoleo) -->
 <div id="comparativa-gasoleo"
      data-componente="comparativa"
      data-producto="gasoleo"
-     data-data-url="https://cdn.jsdelivr.net/gh/ahorrillo/widgets-carburantes-extremadura@v1.0.2/public/datos/">
+     data-data-url="https://cdn.jsdelivr.net/gh/ahorrillo/widgets-carburantes-extremadura@v1.0.4/public/datos/">
 </div>
 
 <!-- A3 · Medias mensuales en barras -->
 <div id="barras-extremadura"
      data-componente="barras"
      data-region="extremadura"
-     data-data-url="https://cdn.jsdelivr.net/gh/ahorrillo/widgets-carburantes-extremadura@v1.0.2/public/datos/">
+     data-data-url="https://cdn.jsdelivr.net/gh/ahorrillo/widgets-carburantes-extremadura@v1.0.4/public/datos/">
 </div>
 
 <!-- A4 · Récords del año (gasolina o gasoleo) -->
@@ -120,25 +120,25 @@ Aloja los datos JSON y el script compilado `widget-carburantes.js` en tu servido
      data-componente="records"
      data-region="extremadura"
      data-producto="gasolina"
-     data-data-url="https://cdn.jsdelivr.net/gh/ahorrillo/widgets-carburantes-extremadura@v1.0.2/public/datos/">
+     data-data-url="https://cdn.jsdelivr.net/gh/ahorrillo/widgets-carburantes-extremadura@v1.0.4/public/datos/">
 </div>
 
 <!-- A5 · Diferencial gasóleo − gasolina -->
 <div id="diferencial-extremadura"
      data-componente="diferencial"
      data-region="extremadura"
-     data-data-url="https://cdn.jsdelivr.net/gh/ahorrillo/widgets-carburantes-extremadura@v1.0.2/public/datos/">
+     data-data-url="https://cdn.jsdelivr.net/gh/ahorrillo/widgets-carburantes-extremadura@v1.0.4/public/datos/">
 </div>
 
 <!-- A6 · Tabla de medias mensuales -->
 <div id="tabla-extremadura"
      data-componente="tabla"
      data-region="extremadura"
-     data-data-url="https://cdn.jsdelivr.net/gh/ahorrillo/widgets-carburantes-extremadura@v1.0.2/public/datos/">
+     data-data-url="https://cdn.jsdelivr.net/gh/ahorrillo/widgets-carburantes-extremadura@v1.0.4/public/datos/">
 </div>
 ```
 
-> **Nota importante:** Se recomienda utilizar siempre un **Tag de Git** (ej: `@v1.0.2`) en las URLs de jsDelivr en lugar de `@main` para evitar retrasos en la actualización por caché de CDN. El `<script>` debe cargarse con `defer` o al final del artículo para no bloquear el renderizado.
+> **Nota importante:** Se recomienda utilizar siempre un **Tag de Git** (ej: `@v1.0.4`) en las URLs de jsDelivr en lugar de `@main` para evitar retrasos en la actualización por caché de CDN. El `<script>` debe cargarse con `defer` o al final del artículo para no bloquear el renderizado.
 
 ---
 
@@ -149,7 +149,7 @@ Aloja los datos JSON y el script compilado `widget-carburantes.js` en tu servido
 | `data-componente` | `grafico` (por defecto), `tabla`, `situacion`, `comparativa`, `barras`, `records`, `diferencial` | Tipo de visualización a renderizar. |
 | `data-region` | `extremadura` (por defecto), `badajoz`, `caceres` | Ámbito geográfico del que se consultarán los datos. |
 | `data-producto` | `gasolina` (por defecto), `gasoleo` | Combustible; solo lo usan `comparativa` y `records`. |
-| `data-data-url` | URL | Base desde la que se cargan los JSON (CDN por defecto: `https://cdn.jsdelivr.net/gh/ahorrillo/widgets-carburantes-extremadura@v1.0.2/public/datos/`). Se elimina la barra final. |
+| `data-data-url` | URL | Base desde la que se cargan los JSON (CDN por defecto: `https://cdn.jsdelivr.net/gh/ahorrillo/widgets-carburantes-extremadura@v1.0.4/public/datos/`). Se elimina la barra final. |
 
 ---
 

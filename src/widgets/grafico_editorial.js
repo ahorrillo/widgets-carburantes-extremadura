@@ -110,7 +110,9 @@ export function renderizarTarjetaEditorial(containerId, titulo, notaFuente) {
   container.innerHTML = `
     <div class="wc-card">
       <h4 class="wc-titulo">${titulo}</h4>
-      <canvas id="${containerId}-chart"></canvas>
+      <div class="wc-grafico-contenedor">
+        <canvas id="${containerId}-chart"></canvas>
+      </div>
       <p class="wc-fuente">${notaFuente}</p>
     </div>
   `;
@@ -140,7 +142,7 @@ export function crearGraficoEditorial(ctx, { etiquetas, series }) {
     },
     options: {
       responsive: true,
-      maintainAspectRatio: true,
+      maintainAspectRatio: false,
       interaction: { mode: 'index', intersect: false },
       plugins: {
         legend: {
@@ -214,7 +216,7 @@ export function crearGraficoBarras(ctx, { etiquetas, series }) {
     },
     options: {
       responsive: true,
-      maintainAspectRatio: true,
+      maintainAspectRatio: false,
       interaction: { mode: 'index', intersect: false },
       plugins: {
         legend: {
@@ -288,7 +290,7 @@ export function crearGraficoDiferencial(ctx, { etiquetas, data }) {
     },
     options: {
       responsive: true,
-      maintainAspectRatio: true,
+      maintainAspectRatio: false,
       interaction: { mode: 'index', intersect: false },
       plugins: {
         legend: {

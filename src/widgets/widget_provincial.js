@@ -24,8 +24,8 @@ export async function renderWidgetProvincial(containerId, provincia = 'badajoz',
     crearGraficoEditorial(ctx, {
       etiquetas: data.map(d => d.fecha),
       series: [
-        { label: 'Gasolina 95 E5 (€/l)', ink: 'gasolina', data: data.map(d => d[provincia]?.gasolina95_E5) },
-        { label: 'Gasóleo A (€/l)', ink: 'gasoleo', data: data.map(d => d[provincia]?.gasoleoA) }
+        { label: 'Gasolina 95', ink: 'gasolina', data: data.map(d => d[provincia]?.gasolina95_E5) },
+        { label: 'Gasóleo A', ink: 'gasoleo', data: data.map(d => d[provincia]?.gasoleoA) }
       ]
     });
   } catch (err) {
